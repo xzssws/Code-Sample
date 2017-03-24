@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="414955c5-3f68-4909-adb6-65276880c438" name="EditModel" linkedPackageId="14c532a4-9f1b-4261-9fa3-7f1bc1111251" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="40a7c606-70ad-4be0-b51f-baea6f3da8f3" name="管理窗体" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="30c38fce-91e1-4c8f-a632-e3d93ed881fd" />
+        <suppliersInternal>
+          <dependency Id="ceac77c4-0f17-434f-9b9e-31db81e4e1f4">
+            <interfaceMoniker Id="b01b4ffe-451a-46ab-b09c-8772fd0f3194" LastKnownName="IInteractionRequestAware" />
+            <elementDefinition Id="2332e5e4-a92a-4007-b197-d54220834634" />
+          </dependency>
+          <dependency Id="6eb3b8a9-a290-48f1-8fdc-55b1f599b04c">
+            <classMoniker Id="3fde90e1-04d4-4ac3-b943-a0ad2e076f20" LastKnownName="Confirmation" />
+            <elementDefinition Id="bc5dde3d-ee65-412d-8eac-f9ed539463ad" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="2522ced7-d01f-4f8a-bd20-c2aebcedd359" isSubstitutable="false">
+            <classMoniker Id="589560e8-6cdf-4bd6-ba67-9e985ec6d5cc" LastKnownName="BindableBase" />
+            <elementDefinition Id="1677ec2f-6d7c-4d95-a9a3-e4c4f75089bd" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="0f5d73e8-1af9-4306-9d46-dcf3965ec0e8" isDerived="false" sourceEndRoleName="管理窗体" targetEndRoleName="编辑对象" isLeaf="false" isAbstract="false">
+            <classMoniker Id="c6fa3bd1-ca9b-4bbf-80ae-f2dce581c265" LastKnownName="编辑对象" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="96e30f46-851f-4e19-a0ad-a8cd0e368574" name="管理窗体" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="85488b94-527a-4648-8a70-47eda626a8da" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b0fcbd3f-6ff9-4231-93a0-502d7607b38f" name="编辑对象" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="8cb82b33-f599-481f-bdd7-ef363643b953" name="Lower" value="*">
+                      <elementDefinition Id="77712bb9-eb41-40a0-873a-178b0d027a95" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="81f6b6c3-b7f3-43bf-8f4d-68ffc008cc01" name="Upper" value="*">
+                      <elementDefinition Id="95df50c9-29b8-405e-b9ee-e475ed74f9ca" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2ca8b845-eba7-4174-8371-4cd71ae5a9a3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="83cd177e-7430-4bc0-9bf0-73ebbe34a046" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="79458e0a-4b69-4f71-8467-b3361898375c" name="集合" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fd7e5a06-a534-484e-994e-d0a8e6b58d66" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="24e0e28b-debc-4c2e-8a14-7f04565b896f" LastKnownName="ObservableCollection&lt;T&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="e8cdc239-dcf7-4671-a34c-29864408c14b" name="通知对象" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="88c91199-203b-4e4a-862d-ee040005e5a1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="183ba9a8-082b-4fd0-b19b-edd548f2b388" LastKnownName="InteractionRequest&lt;Confirmation&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1a51c70b-d2b5-4767-a618-1f5c7d63944f" name="删除" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0058dff6-6953-460e-b085-ac4fa41b31b8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bedb8b18-906a-4157-905a-1ce5ce19d810" direction="Return" isUnique="false">
+                  <elementDefinition Id="3346de57-f69a-4cb6-80d9-18f791be0a17" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eab02d59-80ea-4a2d-a726-22b9b02959ad" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="715fe5d1-1059-4cd8-babb-bad03670854c" name="T t" direction="In" isUnique="false">
+                  <elementDefinition Id="71157ace-53dd-4634-8e62-b6106580c164" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="875df55b-2e9a-4874-86d5-085f13d73824" name="添加" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2ab5f87c-12ef-46fa-9fc9-c23fd3b68c1c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f7dc06d-89ab-453c-822b-ab77df973d3c" direction="Return" isUnique="false">
+                  <elementDefinition Id="ef79edbc-b08e-4f08-a45c-bbb041ced74e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eab02d59-80ea-4a2d-a726-22b9b02959ad" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a3da9515-a976-4db5-aeca-bcf2e1fe852d" name="修改" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b7ec9ed-834a-473e-8c93-7e253702b4e8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b9e11cd3-9bc5-4ade-b22b-a50e258f2c09" direction="Return" isUnique="false">
+                  <elementDefinition Id="bf955dda-2ea7-447a-a39c-0c083bccd198" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="eab02d59-80ea-4a2d-a726-22b9b02959ad" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fb80ae22-c68a-4de7-9751-b3bd9498a088" name="T t" direction="In" isUnique="false">
+                  <elementDefinition Id="26702c9c-a7cd-4477-967e-a7b3ad3fb2c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a46d89ff-cc53-483c-aab2-68cd7b02168a" name="编辑窗体" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ea2e92d7-ee5f-4534-90dd-5a43fb4508ab" />
+        <suppliersInternal>
+          <interfaceRealization Id="7f4c7710-94cb-41a8-8a8c-a305dc98f7e9">
+            <interfaceMoniker Id="b01b4ffe-451a-46ab-b09c-8772fd0f3194" LastKnownName="IInteractionRequestAware" />
+            <elementDefinition Id="68c7a866-8bb8-40f7-ad15-d09446ce1832" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization Id="1a40398c-b3bd-4758-84ec-8b1818ab22c5" isSubstitutable="false">
+            <classMoniker Id="589560e8-6cdf-4bd6-ba67-9e985ec6d5cc" LastKnownName="BindableBase" />
+            <elementDefinition Id="284bca71-d035-4bcb-8e09-64188c108b3b" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="c6f71f1d-568c-414b-8b8e-1d29fc77a0dc" name="操作对象" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="170d0ae3-89ac-4a7f-bab1-0ab3844702ac" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ff9bcb6f-a58e-419c-b583-cabc2763803e" LastKnownName="Action" />
+            </type_NamedElement>
+          </property>
+          <property Id="978a0514-2952-493a-bb12-dfca06ffb11d" name="通知对象" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="14d5604b-4fc0-46b0-a139-3f2ad9dc847a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5dec5092-f9df-4757-af7b-5dd36100e936" LastKnownName="INotification" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="dbf9a4b8-9532-4219-a47d-c50055f19653" name="确认" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eb1e0426-071b-4c6c-9895-219f321c40cf" />
+          </operation>
+          <operation Id="2f0925fb-dcb2-4b0a-9e24-c0943dfe6362" name="取消" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="29a238d6-2637-4a15-8210-4281141bcf9f" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c6fa3bd1-ca9b-4bbf-80ae-f2dce581c265" name="编辑对象" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="18853f63-33a9-4102-b0a6-0d981be038e1" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="eab02d59-80ea-4a2d-a726-22b9b02959ad" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="f626dbfc-154a-4ae0-8024-70754627d10c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="24e0e28b-debc-4c2e-8a14-7f04565b896f" name="ObservableCollection&lt;T&gt;" isAbstract="false" isLeaf="false" cachedFullName="ObservableCollection&lt;T&gt;">
+        <elementDefinition Id="4f666bd9-8606-4e5d-b026-6cce397e784f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ff9bcb6f-a58e-419c-b583-cabc2763803e" name="Action" isAbstract="false" isLeaf="false" cachedFullName="Action">
+        <elementDefinition Id="4fbb3d38-11b4-4a3a-9b8d-8e71f62c61e6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5dec5092-f9df-4757-af7b-5dd36100e936" name="INotification" isAbstract="false" isLeaf="false" cachedFullName="INotification">
+        <elementDefinition Id="7211e109-8b50-45b0-b4b1-383678e2d0f6" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="b01b4ffe-451a-46ab-b09c-8772fd0f3194" name="IInteractionRequestAware" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="65f5d551-e1f0-4a68-8c57-a63eec10e381" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="589560e8-6cdf-4bd6-ba67-9e985ec6d5cc" name="BindableBase" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="63456b22-8ed0-44c8-b4ef-2a44d8f17576" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3fde90e1-04d4-4ac3-b943-a0ad2e076f20" name="Confirmation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="44a2abc3-0e66-4569-a062-9354577f0f0c" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="183ba9a8-082b-4fd0-b19b-edd548f2b388" name="InteractionRequest&lt;Confirmation&gt;" isAbstract="false" isLeaf="false" cachedFullName="InteractionRequest&lt;Confirmation&gt;">
+        <elementDefinition Id="ea9f6454-869a-4834-962d-350bfb2950f2" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="14c532a4-9f1b-4261-9fa3-7f1bc1111251" name="PersonalTaskManagement.Uml">
+    <elementDefinition Id="d6af9840-c53d-44bf-a66c-e3e2e5b90319" />
+    <profileInstances>
+      <packageHasProfileInstances Id="8a13a755-9b1a-495d-a80a-b855e80ef69b">
+        <profileInstance Id="9b764dd2-2477-47ad-a15a-66721f607b74" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e71e858e-b058-4a63-a005-4488b88defad">
+        <profileInstance Id="7cdff432-1524-4733-9d62-7f479d88b4ee" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

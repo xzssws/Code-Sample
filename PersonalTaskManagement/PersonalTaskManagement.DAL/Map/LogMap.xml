@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--  包含日志表基本的返回集,基础查询操作,新增操作,修改操作和删除操作 -->
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!--别名定义-->
+	<alias>
+		<typeAlias alias="LogModel" type="PersonalTaskManagement.Model.LogModel,PersonalTaskManagement.Model" />
+	</alias>
+
+	<!-- 日志表的结果集映射 -->
+	<resultMaps>
+		<resultMap id="Result-Log" class="LogModel">
+			<result property="Time" column="Time" />
+			<result property="Type" column="Type" />
+			<result property="Message" column="Message" />
+		</resultMap>
+	</resultMaps>
+
+	<!-- 日志表的基础操作 -->
+	<statements>
+
+		<!-- 表格字段语段 -->
+		<sql id="Sql-Log-Fields">
+			Time,
+			Type,
+			Message
+		</sql>
+
+		<!-- 筛选条件语段 -->
+		<sql id="Sql-Log-Condition">
+		 	WHERE  1=1
+			<isNotNull  prepend="AND" property="Time">
+				Time = #Time#
+			</isNotNull>
+			<isNotNull  prepend="AND" property="Type">
+				Type = #Type#
+			</isNotNull>
+			<isNotNull  prepend="AND" property="Message">
+				Message = #Message#
+			</isNotNull>
+		</sql>
+
+		<!-- 根据条件查询 日志表 -->
+		<select id="Select-Log" resultMap="Result-Log" parameterClass="LogModel">
+			SELECT <include refid="Sql-Log-Fields" /> FROM Log <include refid="Sql-Log-Condition" />
+		</select>
+
+		<!-- 添加 日志表 -->
+		<insert id="Insert-Log" parameterClass="LogModel">
+			INSERT INTO Log
+			(
+				Time
+				,Type
+				,Message
+			) VALUES (
+				#Time#
+				,#Type#
+				,#Message#
+
+			);
+		</insert>
+
+		<!-- 更改一条日志表 -->
+		<update id ="Update-Log" parameterClass="LogModel">
+			UPDATE Log
+			SET
+			[ID] = #[ID]#
+			<isNotNull prepend="," property="Time">
+				Time = #Time#
+			</isNotNull>
+			<isNotNull prepend="," property="Type">
+				Type = #Type#
+			</isNotNull>
+			<isNotNull prepend="," property="Message">
+				Message = #Message#
+			</isNotNull>
+			WHERE  [ID] = #[ID]#
+		</update>
+
+		<!-- 删除一条日志表 -->
+		<delete id="Delete-Log" parameterClass="string">
+			DELETE Log WHERE  [ID] = #value#;
+		</delete>
+
+		<!--  批量删除 日志表 -->
+		<delete id="Delete-Log-ByCondition" parameterClass="LogModel">
+			DELETE Log <include refid="Sql-Log-Condition" />
+		</delete>
+
+		<!-- 批量添加日志表(不支持可选字段插入) -->
+		<insert id="Inserts-Log" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			INSERT INTO Log
+			(
+							Time,
+							Type,
+							Message
+						) VALUES (
+							#[].Time#,
+							#[].Type#,
+							#[].Message#
+						)
+			</iterate>
+		</insert>
+
+		<!-- 批量更改日志表(不支持可选字段更改) -->
+		<update id ="Updates-Log" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			UPDATE Log
+			SET
+			Time=#[].Time#,
+			Type=#[].Type#,
+			Message=#[].Message#
+		WHERE  [ID] = #[].[ID]#
+		</iterate>
+	</update>
+	</statements>
+</sqlMap>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--  包含任务表基本的返回集,基础查询操作,新增操作,修改操作和删除操作 -->
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!--别名定义-->
+	<alias>
+		<typeAlias alias="TaskModel" type="PersonalTaskManagement.Model.TaskModel,PersonalTaskManagement.Model" />
+	</alias>
+
+	<!-- 任务表的结果集映射 -->
+	<resultMaps>
+		<resultMap id="Result-Task" class="TaskModel">
+			<result property="ID" column="ID" />
+			<result property="Name" column="Name" />
+			<result property="Tag" column="Tag" />
+		</resultMap>
+	</resultMaps>
+
+	<!-- 任务表的基础操作 -->
+	<statements>
+
+		<!-- 表格字段语段 -->
+		<sql id="Sql-Task-Fields">
+			ID,
+			Name,
+			Tag
+		</sql>
+
+		<!-- 筛选条件语段 -->
+		<sql id="Sql-Task-Condition">
+		 	WHERE  1=1
+			<isNotNull  prepend="AND" property="ID">
+				ID = #ID#
+			</isNotNull>
+			<isNotNull  prepend="AND" property="Name">
+				Name = #Name#
+			</isNotNull>
+			<isNotNull  prepend="AND" property="Tag">
+				Tag = #Tag#
+			</isNotNull>
+		</sql>
+
+		<!-- 根据条件查询 任务表 -->
+		<select id="Select-Task" resultMap="Result-Task" parameterClass="TaskModel">
+			SELECT <include refid="Sql-Task-Fields" /> FROM Task <include refid="Sql-Task-Condition" />
+		</select>
+
+		<!-- 添加 任务表 -->
+		<insert id="Insert-Task" parameterClass="TaskModel">
+			INSERT INTO Task
+			(
+				<isNotNull    property="ID">
+					ID
+				  </isNotNull>
+				<isNotNull prepend=","   property="Name">
+					Name
+				  </isNotNull>
+				<isNotNull prepend=","   property="Tag">
+					Tag
+				  </isNotNull>
+			) VALUES (
+				<isNotNull    property="ID">
+					#ID#
+				  </isNotNull>
+				<isNotNull prepend=","   property="Name">
+					#Name#
+				  </isNotNull>
+				<isNotNull prepend=","   property="Tag">
+					#Tag#
+				  </isNotNull>
+
+			);
+		</insert>
+
+		<!-- 更改一条任务表 -->
+		<update id ="Update-Task" parameterClass="TaskModel">
+			UPDATE Task
+			SET
+			[ID] = #[ID]#
+			<isNotNull prepend="," property="ID">
+				ID = #ID#
+			</isNotNull>
+			<isNotNull prepend="," property="Name">
+				Name = #Name#
+			</isNotNull>
+			<isNotNull prepend="," property="Tag">
+				Tag = #Tag#
+			</isNotNull>
+			WHERE  [ID] = #[ID]#
+		</update>
+
+		<!-- 删除一条任务表 -->
+		<delete id="Delete-Task" parameterClass="string">
+			DELETE Task WHERE  [ID] = #value#;
+		</delete>
+
+		<!--  批量删除 任务表 -->
+		<delete id="Delete-Task-ByCondition" parameterClass="TaskModel">
+			DELETE Task <include refid="Sql-Task-Condition" />
+		</delete>
+
+		<!-- 批量添加任务表(不支持可选字段插入) -->
+		<insert id="Inserts-Task" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			INSERT INTO Task
+			(
+							ID,
+							Name,
+							Tag
+						) VALUES (
+							#[].ID#,
+							#[].Name#,
+							#[].Tag#
+						)
+			</iterate>
+		</insert>
+
+		<!-- 批量更改任务表(不支持可选字段更改) -->
+		<update id ="Updates-Task" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			UPDATE Task
+			SET
+			ID=#[].ID#,
+			Name=#[].Name#,
+			Tag=#[].Tag#
+		WHERE  [ID] = #[].[ID]#
+		</iterate>
+	</update>
+	</statements>
+</sqlMap>

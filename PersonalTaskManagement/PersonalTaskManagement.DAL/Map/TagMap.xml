@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--  包含标签表基本的返回集,基础查询操作,新增操作,修改操作和删除操作 -->
+<sqlMap namespace="" xmlns="http://ibatis.apache.org/mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!--别名定义-->
+	<alias>
+		<typeAlias alias="TagModel" type="PersonalTaskManagement.Model.TagModel,PersonalTaskManagement.Model" />
+	</alias>
+
+	<!-- 标签表的结果集映射 -->
+	<resultMaps>
+		<resultMap id="Result-Tag" class="TagModel">
+			<result property="ID" column="ID" />
+			<result property="Name" column="Name" />
+		</resultMap>
+	</resultMaps>
+
+	<!-- 标签表的基础操作 -->
+	<statements>
+		<!-- 表格字段语段 -->
+		<sql id="Sql-Tag-Fields">
+			ID,
+			Name
+		</sql>
+
+		<!-- 筛选条件语段 -->
+		<sql id="Sql-Tag-Condition">
+		 	WHERE  1=1
+			<isNotNull  prepend="AND" property="ID">
+				ID = #ID#
+			</isNotNull>
+			<isNotNull  prepend="AND" property="Name">
+				Name = #Name#
+			</isNotNull>
+		</sql>
+
+		<!-- 根据条件查询 标签表 -->
+		<select id="Select-Tag" resultMap="Result-Tag" parameterClass="TagModel">
+			SELECT <include refid="Sql-Tag-Fields" /> FROM Tag <include refid="Sql-Tag-Condition" />
+		</select>
+
+		<!-- 添加 标签表 -->
+		<insert id="Insert-Tag" parameterClass="TagModel">
+			INSERT INTO Tag
+			(
+				Name
+				<isNotNull prepend=","   property="ID">
+					ID
+				  </isNotNull>
+			) VALUES (
+				#Name#
+				<isNotNull prepend=","   property="ID">
+					#ID#
+				  </isNotNull>
+
+			);
+		</insert>
+
+		<!-- 更改一条标签表 -->
+		<update id ="Update-Tag" parameterClass="TagModel">
+			UPDATE Tag
+			SET
+			[ID] = #[ID]#
+			<isNotNull prepend="," property="ID">
+				ID = #ID#
+			</isNotNull>
+			<isNotNull prepend="," property="Name">
+				Name = #Name#
+			</isNotNull>
+			WHERE  [ID] = #[ID]#
+		</update>
+
+		<!-- 删除一条标签表 -->
+		<delete id="Delete-Tag" parameterClass="string">
+			DELETE Tag WHERE  [ID] = #value#;
+		</delete>
+
+		<!--  批量删除 标签表 -->
+		<delete id="Delete-Tag-ByCondition" parameterClass="TagModel">
+			DELETE Tag <include refid="Sql-Tag-Condition" />
+		</delete>
+
+		<!-- 批量添加标签表(不支持可选字段插入) -->
+		<insert id="Inserts-Tag" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			INSERT INTO Tag
+			(
+							ID,
+							Name
+						) VALUES (
+							#[].ID#,
+							#[].Name#
+						)
+			</iterate>
+		</insert>
+
+		<!-- 批量更改标签表(不支持可选字段更改) -->
+		<update id ="Updates-Tag" parameterClass="list">
+			<iterate conjunction=";" open="" close="">
+			UPDATE Tag
+			SET
+			ID=#[].ID#,
+			Name=#[].Name#
+		WHERE  [ID] = #[].[ID]#
+		</iterate>
+	</update>
+	</statements>
+</sqlMap>

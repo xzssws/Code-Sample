@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="d6af9840-c53d-44bf-a66c-e3e2e5b90319"
+  name="PersonalTaskManagement.Uml" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="30c38fce-91e1-4c8f-a632-e3d93ed881fd"
+        name="管理窗体"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="2332e5e4-a92a-4007-b197-d54220834634">
+            <interfaceMoniker
+              Id="65f5d551-e1f0-4a68-8c57-a63eec10e381"
+              LastKnownName="IInteractionRequestAware"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+          </dependency>
+          <dependency
+            Id="bc5dde3d-ee65-412d-8eac-f9ed539463ad">
+            <classMoniker
+              Id="44a2abc3-0e66-4569-a062-9354577f0f0c"
+              LastKnownName="Confirmation"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+          </dependency>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="1677ec2f-6d7c-4d95-a9a3-e4c4f75089bd"
+            isSubstitutable="false">
+            <classMoniker
+              Id="63456b22-8ed0-44c8-b4ef-2a44d8f17576"
+              LastKnownName="BindableBase"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association
+            Id="83cd177e-7430-4bc0-9bf0-73ebbe34a046"
+            isDerived="false"
+            sourceEndRoleName="管理窗体"
+            targetEndRoleName="编辑对象"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="18853f63-33a9-4102-b0a6-0d981be038e1"
+              LastKnownName="编辑对象"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="85488b94-527a-4648-8a70-47eda626a8da"
+                  name="管理窗体"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2ca8b845-eba7-4174-8371-4cd71ae5a9a3"
+                  name="编辑对象"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="77712bb9-eb41-40a0-873a-178b0d027a95"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="95df50c9-29b8-405e-b9ee-e475ed74f9ca"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="fd7e5a06-a534-484e-994e-d0a8e6b58d66"
+            name="集合"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4f666bd9-8606-4e5d-b026-6cce397e784f"
+                LastKnownName="ObservableCollection&lt;T&gt;"
+                LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="88c91199-203b-4e4a-862d-ee040005e5a1"
+            name="通知对象"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="ea9f6454-869a-4834-962d-350bfb2950f2"
+                LastKnownName="InteractionRequest&lt;Confirmation&gt;"
+                LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="0058dff6-6953-460e-b085-ac4fa41b31b8"
+            name="删除"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3346de57-f69a-4cb6-80d9-18f791be0a17"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f626dbfc-154a-4ae0-8024-70754627d10c"
+                      LastKnownName="void"
+                      LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="71157ace-53dd-4634-8e62-b6106580c164"
+                  name="T t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2ab5f87c-12ef-46fa-9fc9-c23fd3b68c1c"
+            name="添加"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ef79edbc-b08e-4f08-a45c-bbb041ced74e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f626dbfc-154a-4ae0-8024-70754627d10c"
+                      LastKnownName="void"
+                      LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="0b7ec9ed-834a-473e-8c93-7e253702b4e8"
+            name="修改"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bf955dda-2ea7-447a-a39c-0c083bccd198"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="f626dbfc-154a-4ae0-8024-70754627d10c"
+                      LastKnownName="void"
+                      LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="26702c9c-a7cd-4477-967e-a7b3ad3fb2c6"
+                  name="T t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ea2e92d7-ee5f-4534-90dd-5a43fb4508ab"
+        name="编辑窗体"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="68c7a866-8bb8-40f7-ad15-d09446ce1832">
+            <interfaceMoniker
+              Id="65f5d551-e1f0-4a68-8c57-a63eec10e381"
+              LastKnownName="IInteractionRequestAware"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <generalsInternal>
+          <generalization
+            Id="284bca71-d035-4bcb-8e09-64188c108b3b"
+            isSubstitutable="false">
+            <classMoniker
+              Id="63456b22-8ed0-44c8-b4ef-2a44d8f17576"
+              LastKnownName="BindableBase"
+              LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="170d0ae3-89ac-4a7f-bab1-0ab3844702ac"
+            name="操作对象"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="4fbb3d38-11b4-4a3a-9b8d-8e71f62c61e6"
+                LastKnownName="Action"
+                LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="14d5604b-4fc0-46b0-a139-3f2ad9dc847a"
+            name="通知对象"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="7211e109-8b50-45b0-b4b1-383678e2d0f6"
+                LastKnownName="INotification"
+                LastKnownLocation="PersonalTaskManagement.Uml.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="eb1e0426-071b-4c6c-9895-219f321c40cf"
+            name="确认"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="29a238d6-2637-4a15-8210-4281141bcf9f"
+            name="取消"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="18853f63-33a9-4102-b0a6-0d981be038e1"
+        name="编辑对象"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c3f5cec0-ec62-47e0-b0bd-d051068f914a"
+        name="Confirmation" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f553d668-04c4-4ca9-9da9-1cb82b3fe99b"
+        name="ObservableCollection" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f626dbfc-154a-4ae0-8024-70754627d10c"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4f666bd9-8606-4e5d-b026-6cce397e784f"
+        name="ObservableCollection&lt;T&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="4fbb3d38-11b4-4a3a-9b8d-8e71f62c61e6"
+        name="Action" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="7211e109-8b50-45b0-b4b1-383678e2d0f6"
+        name="INotification" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="65f5d551-e1f0-4a68-8c57-a63eec10e381"
+        name="IInteractionRequestAware"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="63456b22-8ed0-44c8-b4ef-2a44d8f17576"
+        name="BindableBase"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="44a2abc3-0e66-4569-a062-9354577f0f0c"
+        name="Confirmation"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ea9f6454-869a-4834-962d-350bfb2950f2"
+        name="InteractionRequest&lt;Confirmation&gt;" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

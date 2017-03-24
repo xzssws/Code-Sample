@@ -1,0 +1,29 @@
+﻿<Window
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ViewModels="clr-namespace:PersonalTaskManagement.ViewModels" x:Class="PersonalTaskManagement.TaskModule.EditTask"
+             mc:Ignorable="d"
+             Title="编辑任务"
+             d:DesignHeight="170" d:DesignWidth="292" d:DataContext="{d:DesignInstance {x:Type ViewModels:EditTaskViewModel}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="16" />
+            <RowDefinition Height="4" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" MinHeight="40" />
+        </Grid.RowDefinitions>
+        <TextBlock TextWrapping="Wrap" Text="任务" Grid.Row="1" Margin="4,2,0,2" />
+        <TextBox TextWrapping="Wrap" Grid.Row="2" Margin="4" Text="{Binding FinishInteraction}" />
+        <TextBlock TextWrapping="Wrap" Text="标签" Grid.Row="3" Grid.RowSpan="2" Margin="4,2,0,2" />
+        <ComboBox Grid.Row="5" Margin="4" />
+        <StackPanel Orientation="Horizontal" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,4,4">
+            <Button Content="确定" Margin="3" Width="60" Command="{Binding ConfirmCommand}" />
+            <Button Content="取消" Margin="3" Width="60" Command="{Binding CancelCommand}" />
+        </StackPanel>
+    </Grid>
+</Window>
