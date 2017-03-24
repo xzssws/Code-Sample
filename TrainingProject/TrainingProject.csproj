@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{74D899D8-1763-4F12-9395-C45EEEFA2DDE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrainingProject</RootNamespace>
+    <AssemblyName>TrainingProject</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Net20">
+      <HintPath>C:\Users\Administrator\Desktop\Newtonsoft.Json.Net20.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageS.cs" />
+    <Compile Include="JSON\CodeFile1.cs" />
+    <Compile Include="JSON\CodeFile2.cs" />
+    <Compile Include="JSON\ValHelp.cs" />
+    <Compile Include="XML配置文件.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML配置文件.Designer.cs">
+      <DependentUpon>XML配置文件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="录屏\AVI.cs" />
+    <Compile Include="录屏\ScreenRecording.cs" />
+    <Compile Include="JSON\JSON序列化.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JSON\JSON序列化.Designer.cs">
+      <DependentUpon>JSON序列化.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="保存DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="保存DOC.Designer.cs">
+      <DependentUpon>保存DOC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="全文索引.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="全文索引.Designer.cs">
+      <DependentUpon>全文索引.cs</DependentUpon>
+    </Compile>
+    <Compile Include="录屏\图像转AVI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="录屏\图像转AVI.Designer.cs">
+      <DependentUpon>图像转AVI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="文件实时监控.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="文件实时监控.Designer.cs">
+      <DependentUpon>文件实时监控.cs</DependentUpon>
+    </Compile>
+    <Compile Include="获取用户IP转换.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="获取用户IP转换.Designer.cs">
+      <DependentUpon>获取用户IP转换.cs</DependentUpon>
+    </Compile>
+    <Compile Include="集合深Copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="集合深Copy.Designer.cs">
+      <DependentUpon>集合深Copy.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JSON\JSON序列化.resx">
+      <DependentUpon>JSON序列化.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="XML配置文件.resx">
+      <DependentUpon>XML配置文件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="保存DOC.resx">
+      <DependentUpon>保存DOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="全文索引.resx">
+      <DependentUpon>全文索引.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="录屏\图像转AVI.resx">
+      <DependentUpon>图像转AVI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="文件实时监控.resx">
+      <DependentUpon>文件实时监控.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="获取用户IP转换.resx">
+      <DependentUpon>获取用户IP转换.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="集合深Copy.resx">
+      <DependentUpon>集合深Copy.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
